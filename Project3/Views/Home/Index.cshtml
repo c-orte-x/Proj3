@@ -1,0 +1,161 @@
+﻿<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <title>Promote Business Category Bootstrap Responsive Web Template | Home :: W3layouts</title>
+    <!-- Meta tag Keywords -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8" />
+    <meta name="keywords" content="Promote Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+    <!-- //Meta tag Keywords -->
+    <!-- Custom-Files -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <!-- Bootstrap-Core-CSS -->
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="css/slider.css" type="text/css" media="all" />
+    <!-- Style-CSS -->
+    <!-- font-awesome-icons -->
+    <link href="css/font-awesome.css" rel="stylesheet">
+    <!-- //font-awesome-icons -->
+    <!-- /Fonts -->
+    <link href="//fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+    <!-- //Fonts -->
+</head>
+<body>
+    <!-- header -->
+    <header>
+        <div class="container">
+            <nav class="py-3 d-lg-flex">
+                <ul class="menu ml-auto mt-1">
+                    @if (SignInManager.IsSignedIn(User))
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @User.Identity.Name!</a>
+                        </li>
+                        <li class="nav-item">
+                            <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+                                <button type="submit" class="nav-link btn btn-link text-dark">Logout</button>
+                            </form>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Register">Register</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Login">Login</a>
+                        </li>
+                    }
+                </ul>
+            </nav>
+            <!-- nav -->
+            <!-- //nav -->
+        </div>
+    </header>
+    <!-- //header -->
+    <!-- banner -->
+    <div class="banner" id="home">
+        <div class="layer">
+            <div class="container">
+                <div class="banner-text-w3pvt">
+                    <!-- banner slider-->
+                    <div class="csslider infinity" id="slider1">
+                        <div class="navigation">
+                            <div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- //banner slider-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //banner -->
+    <!-- footer -->
+    <footer class="py-md-5 py-3">
+        <div class="container py-md-5 py-3">
+            <div class="row footer-grids">
+                <div class="col-lg-3 col-sm-6 mb-lg-0 mb-sm-5 mb-4">
+                    <h4 class="mb-4">View data</h4>
+                    <ul>
+                        @if (SignInManager.IsSignedIn(User))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-controller="People" asp-action="Index">People</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-controller="Orders" asp-action="Index">Orders</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-controller="Returns" asp-action="Index">Returns</a>
+                            </li>
+                        }
+                    </ul>
+
+                </div>
+                <div class="col-lg-3 col-sm-6 mb-md-0 mb-sm-5 mb-4">
+                    <h4 class="mb-4">Charts</h4>
+                    <ul>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Charts" asp-action="BarChartOrdersAndReturns">Orders And Returns</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Charts" asp-action="PieChartAllOrdersByCountry">Orders Per Country</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Charts" asp-action="LineChartSalesOverYears">Sales Over Time</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Charts" asp-action="LineChartProfitOverYears">Profit Over Time</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Charts" asp-action="BarChartMostReturnsPerRegion">Top Most Returns</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-sm-6 mb-lg-0 mb-sm-5 mb-4">
+
+                </div>
+                <div class="col-lg-4 col-sm-6">
+
+                    <form action="#" method="post" class="d-flex">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- //footer -->
+    <!-- copyright -->
+    <div class="copyright">
+        <div class="container py-4">
+            <div class=" text-center">
+                <p>Â© 2019 promote. All Rights Reserved | Design by <a href="http://w3layouts.com/"> W3layouts</a> </p>
+            </div>
+        </div>
+    </div>
+    <!-- //copyright -->
+    <!-- move top -->
+    <div class="move-top text-right">
+        <a href="#home" class="move-top">
+            <span class="fa fa-angle-up  mb-3" aria-hidden="true"></span>
+        </a>
+    </div>
+    <!-- move top -->
+
+
+
+</body>
+</html>
